@@ -20,7 +20,7 @@ var log *zap.Logger
 func (e *allRoutes) LoadHome(r *Route) {
 	log = e.log.Named("Stream")
 	defer log.Info("Loaded stream route")
-	r.Engine.GET("/stream/:messageID.mp4", getStreamRoute)
+	r.Engine.GET("/stream/:messageID", getStreamRoute)
 }
 
 func getStreamRoute(ctx *gin.Context) {
